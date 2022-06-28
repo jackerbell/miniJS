@@ -19,24 +19,34 @@
     background-color: white;
     border: 4px solid red ;
     padding: 10px;
+    text-align:center; 
+    margin-bottom: 40px;
+  }
+  main{
+    text-align:center; 
+    margin-bottom: 40px;
   }
   #surveyForm{
+    display: none;
     text-align:center;
     width: 80%;
-    height: 200%;
+    height: 100%;
     background-color: white;
     margin-top: 20px;
     margin-bottom: 20px;
   }
+  footer{
+    text-align:center;
+  }
 </style>
 <body>
   <div id="wrap">
-    <header style="text-align:center; margin-bottom: 40px;">
+    <header>
       <h3>
         우울증 진단을 위한 설문조사입니다.
       </h3>
     </header>
-    <main style="text-align:center; margin-bottom: 40px;">
+    <main>
       <p>
         항목의 점수는 다음과 같습니다.<br> 
         매우 그렇다. 1점, 그렇다 2점, 보통이다 3점, 그렇지 않다 4점<br>
@@ -44,20 +54,34 @@
         20 개의 문항의 합계가 60점 이상일 경우 가까운 정신과에 내원하시는 것을 추천드립니다.<br> 
       </p>
     </main>
-    <footer style="text-align:center;">
+    <footer>
       <button onclick="startSV()">설문조사 시작!</button>
     </footer>
   </div>
-  <div id="surveyForm" style="display:none;">
+  <div id="surveyForm">
   </div>
 
   <script>
+    var questions = ['']
+    var answers = ['매우 그렇다','그렇다','보통이다','아니다']
     function startSV() {
       var body = document.querySelector('body');
       var wrap = document.querySelector('#wrap');
       wrap.style.display = 'none'
       var surveyForm = document.querySelector('#surveyForm')
+      var input = document.createElement('input')
+      input.setAttribute('type','radio')
+      input.setAttribute('name','gloomy')
+      input.id='gloomy'
+      var label = document.createElement('label')
+      label.setAttribute('for','gloomy')
       surveyForm.style.display = 'block'
+      surveyForm.innerHTML += '<h1 style="color:aqua;">우울증 진단을 위한 설문입니다.</h1>'
+      for(var i =0; i< 4; i++){
+        label.innerHTML += answers[i]
+        surveyForm.appendChild(label)
+        surveyForm.appendChild(input)
+      }
     }
   </script>
 </body>
