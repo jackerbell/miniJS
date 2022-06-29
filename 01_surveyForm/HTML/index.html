@@ -11,12 +11,12 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    height: 100vh;
+    height: 180vh;
     background-image: url(../../IMG/01_surveyForm/우울증이미지_배경.jfif);
     background-position: center center;
   }
   #wrap {
-    background-color: white;
+    background-color: rgb(196, 132, 12);
     border: 4px solid red ;
     padding: 10px;
     text-align:center; 
@@ -27,13 +27,12 @@
     margin-bottom: 40px;
   }
   #surveyForm{
+    background-color: rgb(196, 132, 12);
     display: none;
     text-align:center;
     width: 80%;
-    height: 100%;
-    background-color: white;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   footer{
     text-align:center;
@@ -62,26 +61,52 @@
   </div>
 
   <script>
-    var questions = ['']
+    var questions = ['1. 미래에 대한 희망이 없다.','2. 이유없이 죄책감이 든다.','3. 하루종일 우울한 기분이 든다.',
+    '4. 나만 소외되는 느낌이 든다.','5. 열등감이 생기고 그로 인해 스트레스를 받는다.','6. 식습관이 변하지 않았는데 갑자기 체중증가 또는 감소 증상이 나타난다.',
+    '7. 과수면 또는 불면증에 시달린다.','8. 일상생활이 불만족스럽다.','9. 별일 아닌 것에 대해서도 눈물이 자주난다.','10. 자살충동을 느껴본 적이 있다.','11. 건강에 대해 자신이 없고 성생활이 무의미하다.',
+    '12. 나 자신에 대해 싫고 추한 느낌이 든다.','13. 항상 피곤해서 일상생활을 할 수가 없다.','14. 실패자 낙오자라는 생각을 자주한다.','15. 어떤 것의 결정을 스스로 하지 못한다.']
     var answers = ['매우 그렇다','그렇다','보통이다','아니다']
+    var tNum = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+    var values = [1,2,3,4]
+    var total = 0;
     function startSV() {
-      var body = document.querySelector('body');
-      var wrap = document.querySelector('#wrap');
-      wrap.style.display = 'none'
+      var body = document.querySelector('body')
+      var wrap = document.querySelector('#wrap')
       var surveyForm = document.querySelector('#surveyForm')
-      var input = document.createElement('input')
-      input.setAttribute('type','radio')
-      input.setAttribute('name','gloomy')
-      input.id='gloomy'
-      var label = document.createElement('label')
-      label.setAttribute('for','gloomy')
+      wrap.style.display = 'none'
       surveyForm.style.display = 'block'
-      surveyForm.innerHTML += '<h1 style="color:aqua;">우울증 진단을 위한 설문입니다.</h1>'
-      for(var i =0; i< 4; i++){
-        label.innerHTML += answers[i]
-        surveyForm.appendChild(label)
-        surveyForm.appendChild(input)
+      surveyForm.innerHTML += '<h1 style="font-weight=bold;">우울증 진단을 위한 설문입니다.</h1>'
+      for(var i =0; i<15; i++){
+        var test_qst = document.createElement('p')
+        test_qst.innerHTML += `<b>${questions[i]}<b>`
+        surveyForm.appendChild(test_qst)
+        for(var j =0; j< 4; j++){
+          
+          var input = document.createElement('input')
+          input.setAttribute('type','radio')
+          input.setAttribute('name',`gloomy+${i}`) // 구분안하면 전 항목이 묶이게 됨.. 
+          input.setAttribute('value',values[j])
+          input.classList.add('gloomy')
+          var label = document.createElement('label')
+          label.innerHTML += answers[j]
+          surveyForm.appendChild(label)
+          surveyForm.appendChild(input)
+          var myRadio = document.getElementsByName(`gloomy+${i}`)
+          for(var k=0; k<myRadio.length; k++){ // for문이 작동이 안됨.. 경고창을 넣어봐도 반응이 없음
+            if(myRadio[j].checked==true) total += myRadio[j].value
+          }          
+        }
+     }
+      var submitArea = document.createElement('div')
+      submitArea.style.textAlign='center'
+      submitArea.style.margin='20px'
+      var submit = document.createElement('button')
+      submit.onclick = function(){
+        alert(`우울증 점수는 ${total}`) 
       }
+      submit.innerHTML = '제출'
+      submitArea.appendChild(submit)
+      surveyForm.appendChild(submitArea)
     }
   </script>
 </body>
