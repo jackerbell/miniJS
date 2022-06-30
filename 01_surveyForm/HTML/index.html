@@ -5,61 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="../JS/app.js">
+  <script src="../JS/app.js"></script>
 </head>
 <style>
-  body {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height: 100vh;
-    background-image: url(../../IMG/01_surveyForm/우울증이미지_배경.jfif);
-    background-position: center center;
-  }
-  #wrap {
-    background-color: white;
-    border: 4px solid red ;
-    padding: 10px;
-  }
-  #surveyForm{
-    text-align:center;
-    width: 80%;
-    height: 200%;
-    background-color: white;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-</style>
+</style
 <body>
   <div id="wrap">
-    <header style="text-align:center; margin-bottom: 40px;">
+    <header>
       <h3>
         우울증 진단을 위한 설문조사입니다.
       </h3>
     </header>
-    <main style="text-align:center; margin-bottom: 40px;">
+    <main>
       <p>
         항목의 점수는 다음과 같습니다.<br> 
         매우 그렇다. 1점, 그렇다 2점, 보통이다 3점, 그렇지 않다 4점<br>
         합계 점수가 높으면 높을 수록 우울증 위험도가 높은 편에 해당하며<br>
-        20 개의 문항의 합계가 60점 이상일 경우 가까운 정신과에 내원하시는 것을 추천드립니다.<br> 
+        15 개의 문항의 합계가 45점 이상일 경우 가까운 정신과에 내원하시는 것을 추천드립니다.<br> 
       </p>
     </main>
-    <footer style="text-align:center;">
+    <footer>
       <button onclick="startSV()">설문조사 시작!</button>
     </footer>
   </div>
-  <div id="surveyForm" style="display:none;">
+  <div id="surveyForm">
   </div>
-
-  <script>
-    function startSV() {
-      var body = document.querySelector('body');
-      var wrap = document.querySelector('#wrap');
-      wrap.style.display = 'none'
-      var surveyForm = document.querySelector('#surveyForm')
-      surveyForm.style.display = 'block'
-      surveyForm.innerHTML += '<h1>우울증 설문 조사</h1>'
-    }
-  </script>
 </body>
 </html>
