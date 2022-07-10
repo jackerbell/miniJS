@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script text="type/javascript">
+        function changeBox(){
+            var first = document.getElementById('page1')
+            var second = document.getElementById('page2')
+            var button = document.getElementsByTagName('button')
+            if(button.innerHTML == 'page1'){
+                first.style.display='none'
+                second.style.display='block'
+                button.innerHTML = 'page2'
+            }else if(button.innerHTML='page2'){
+                first.style.display='block'
+                second.style.display='none'
+                button.innerHTML = 'page1'
+            }
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/24ba46a7a7.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;       
+            flex-direction: column; 
+        }
+        #page1{
+            width: 550px;
+            height: 750px;
+            background-color: orange;
+            position: relative;
+            border-radius: 50px;
+        }
+        #page1 > * {
+            margin: auto;
+        }
+        #header{
+            width: 470px;
+            height: 40px;
+            background-color: antiquewhite;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size:16px;
+            padding-top: calc((40px - 32px)/2);
+        }
+        #main{
+            width: 470px;
+            height: 590px;
+            background-color: aquamarine;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        #main #singer_info {
+            background-color: crimson;
+            height: 200px;
+            padding-top: 10px;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #singer_info #singer_photo img{
+          width: 90px;
+          height: 120px;
+          border-radius: 50%;
+        }
+
+        #main #order_heart {
+            background-color: khaki;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+
+        #order_heart > * {
+            background-color:#fff;
+            text-align: center;
+            padding-top: calc((40px - 21px)/2);
+            border-radius: 50px;
+        }
+
+        #main #order_heart #order {
+          width: 100px;
+          height: 40px;
+          margin-right: 100px;
+        }
+
+        #order span:nth-child( n + 2 ){
+          display:none
+        }
+
+        #main #order_heart #heart {
+          width: 100px;
+          height: 40px;
+        }
+
+        #main #play_list {
+            background-color: fuchsia;
+            height: 240px;
+        }
+
+        #main #controller {
+            background-color:forestgreen;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            height: 80px;
+        }
+
+        #page2{
+            display: none;
+            width: 550px;
+            height: 750px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="page1">
+        <header id="header">
+            <a href="#"><i class="fa-solid fa-music fa-2x"></i></a>
+            <a href="#"><i class="fa-solid fa-magnifying-glass fa-2x"></i></a>
+            <!--<i class="fa-solid fa-angle-left fa-3x"></i> page2에서 쓸예정-->
+            <!--font awesome 뒤로가기 탐색문양 순서대로 넣고 
+            하나는 왼쪽 하나는 오른쪽 정렬.. -->
+        </header>
+        <main id="main">
+            <div id="singer_info">
+                <div id="singer_photo">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.hankyung.com%2Fphoto%2F201908%2Fc34b5f32037f5549389c561b83108e29.jpg&amp;f=1&amp;nofb=1">
+                </div>
+                <span>Artist Name</span>
+                <span>Genre</span>
+            </div>
+            <div id="order_heart">
+                <div id="order">
+                    <span>shuffle <i class="fa-solid fa-shuffle"></i></span>
+                    <span>repeat <i class="fa-solid fa-repeat"></i></span>
+                    <span>repeat <i class="fa-solid fa-repeat"></i>1</span>
+                </div>
+                <div id="heart">
+                  <i class="fa-solid fa-heart"></i>
+                  <span>339,224</span>
+                </div>
+              </div>
+              <div id="play_list"></div>
+              <div id="controller"></div>
+        </main>
+    </div>
+    <div id="page2">
+
+    </div>
+    <div>
+        <button onclick="changeBox()">page1</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raphael's Music Player</title>
+  </head>
+  <body>
+    <div class="page_one">
+      <header class="page_one__header">
+        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-search"></i>
+      </header>
+      <main class="page_one__main">
+        <div class="main__singer_info_container">
+          <div class="singer-photo">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.hankyung.com%2Fphoto%2F201908%2Fc34b5f32037f5549389c561b83108e29.jpg&f=1&nofb=1"/>
+          </div>
+          <span class="singer-name">적재</span>
+          <span class="singer-category">acoustic, R&B</span>
+        </div>
+        <div class="main__shuffle_or_heart">
+          <div class="shuffle">Shuffle</div>
+          <div class="heart">
+            <i class="fas fa-heart"></i>
+            <span>&nbsp;&nbsp;391,234</span>
+          </div>
+        </div>
+        <div class="main__playList">
+          <div class="playList__song">
+            <div class="song__album">
+              <img src="https://i1.sndcdn.com/artworks-000442244943-odzok4-t500x500.jpg" />
+            </div>
+            <div class="song__album_info">
+              <span class="album_info__singer">적재</span>
+              <span class="album_info__title">별 보러 가자</span>
+            </div>
+            <div class="song__ellipsis_container">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="playList__song">
+            <div class="song__album">
+              <img src="https://blog.kakaocdn.net/dn/dBn2us/btqzVDEIKoE/rsKLWbH52wmoBN5qZe0FdK/img.jpg" />
+              <div class="song__play_icon_container">
+                <i class="fas fa-play"></i>
+              </div>
+            </div>
+            <div class="song__album_info">
+              <span class="album_info__singer">적재</span>
+              <span class="album_info__title">Lullaby</span>
+            </div>
+            <div class="song__ellipsis_container">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="playList__song">
+            <div class="song__album">
+              <img src="https://img.theqoo.net/img/djGGP.jpg" />
+            </div>
+            <div class="song__album_info">
+              <span class="album_info__singer">적재</span>
+              <span class="album_info__title">Letter(잘 지내)</span>
+            </div>
+            <div class="song__ellipsis_container">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="playList__song">
+            <div class="song__album">
+              <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/18/003/10318003_500.jpg?f6d288357c9aeb3a6692b5e2f1a9c216/melon/resize/282/quality/80/optimize" />
+            </div>
+            <div class="song__album_info">
+              <span class="album_info__singer">적재</span>
+              <span class="album_info__title">TATTOO</span>
+            </div>
+            <div class="song__ellipsis_container">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+        </div>
+        <div class="main__controller">
+          <div class="controller__playing">
+            <span class="playing__singer">적재</span>
+            <span class="playing__title">Lullaby</span>
+          </div>
+          <div class="controller__btn">
+            <i class="fas fa-step-backward"></i>
+            <i class="fas fa-pause"></i>
+            <i class="fas fa-step-forward"></i>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="page_two">
+      <header class="page_two__header">
+        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-ellipsis-v"></i>
+      </header>
+      <main class="page_two__main">
+        <div class="page_two__main__current_music_photo">
+          <img src="https://blog.kakaocdn.net/dn/dBn2us/btqzVDEIKoE/rsKLWbH52wmoBN5qZe0FdK/img.jpg" />
+        </div>
+        <div class="page_two__main__current_music_info">
+          <span class="currrent_music_info__title">Lullaby</span>
+          <span class="currrent_music_info__singer">적재</span>
+        </div>
+        <div class="page_two__main__play_time">
+          <span>2:13</span>
+          <span>3:28</span>
+        </div>
+        <div class="page_two__main__time_bar">
+          <div class="time_bar__time_stamp"></div>
+          <i class="fas fa-circle"></i>
+        </div>
+        <div class="page_two__main__controller">
+          <i class="fas fa-sync-alt"></i>
+          <i class="fas fa-fast-backward"></i>
+          <i class="fas fa-play-circle"></i>
+          <i class="fas fa-fast-forward"></i>
+          <i class="fas fa-random"></i>
+        </div>
+      </main>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
