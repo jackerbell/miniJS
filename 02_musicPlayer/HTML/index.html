@@ -7,14 +7,14 @@
     <title>Document</title>
     <script text="type/javascript">
         function changeBox(){
-            var first = document.getElementById('page1')
-            var second = document.getElementById('page2')
-            var button = document.getElementsByTagName('button')
+            const first = document.getElementById('page1')
+            const second = document.getElementById('page2')
+            const button = document.getElementById('btn'); 
             if(button.innerHTML == 'page1'){
                 first.style.display='none'
                 second.style.display='block'
                 button.innerHTML = 'page2'
-            }else if(button.innerHTML='page2'){
+            }else if(button.innerHTML = 'page2'){
                 first.style.display='block'
                 second.style.display='none'
                 button.innerHTML = 'page1'
@@ -23,12 +23,18 @@
     </script>
     <script src="https://kit.fontawesome.com/24ba46a7a7.js" crossorigin="anonymous"></script>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body {
             width: 100vw;
             height: 100vh;
             display: flex;
@@ -36,17 +42,20 @@
             align-items: center;       
             flex-direction: column; 
         }
-        #page1{
+
+        #page1 {
             width: 550px;
             height: 750px;
             background-color: orange;
             position: relative;
             border-radius: 50px;
         }
+
         #page1 > * {
             margin: auto;
         }
-        #header{
+
+        #header {
             width: 470px;
             height: 40px;
             background-color: antiquewhite;
@@ -57,13 +66,15 @@
             font-size:16px;
             padding-top: calc((40px - 32px)/2);
         }
-        #main{
+
+        #main {
             width: 470px;
             height: 590px;
             background-color: aquamarine;
             border-bottom-left-radius: 50px;
             border-bottom-right-radius: 50px;
         }
+
         #main #singer_info {
             background-color: crimson;
             height: 200px;
@@ -75,9 +86,9 @@
         }
 
         #singer_info #singer_photo img{
-          width: 90px;
-          height: 120px;
-          border-radius: 50%;
+            width: 90px;
+            height: 120px;
+            border-radius: 50%;
         }
 
         #main #order_heart {
@@ -91,28 +102,71 @@
         #order_heart > * {
             background-color:#fff;
             text-align: center;
-            padding-top: calc((40px - 21px)/2);
             border-radius: 50px;
         }
 
         #main #order_heart #order {
-          width: 100px;
-          height: 40px;
-          margin-right: 100px;
+            width: 100px;
+            height: 40px;
+            margin-right: 100px;
         }
 
-        #order span:nth-child( n + 2 ){
-          display:none
+        #order a:nth-child( n + 2 ) {
+            display:none
+        }
+
+        #order_heart a {
+            text-decoration: none;
+            color: #fff;
+            background-color: black;
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            border-radius: 50px;
+            padding-top: calc((40px - 26.33px)/2);
+        }
+
+        #order_heart a:hover { /*JS로 눌렀을 때 처리와 동시에 hover효과 처리*/
+            background-color:white;
+            color: black;
         }
 
         #main #order_heart #heart {
-          width: 100px;
-          height: 40px;
+            width: 100px;
+            height: 40px;
         }
 
         #main #play_list {
             background-color: fuchsia;
             height: 240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #play_list .playList__song {
+            background-color: rgb(242, 223, 223);
+            width: 80%;
+            height: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 15px;
+        }
+
+        #play_list .playList__song .song__album{
+            margin-left: 20px;
+            border-radius: 15px;
+        }
+        
+        .album__info {
+            display: flex;
+            justify-content:center;
+            flex-direction: column;
+            margin-left: 10px;
+            padding-left: 20px;
+            width: 288px;;
         }
 
         #main #controller {
@@ -120,6 +174,32 @@
             border-bottom-left-radius: 50px;
             border-bottom-right-radius: 50px;
             height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #nowPlaying {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 30px;
+        }
+
+        #pad {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        #pad i {
+            margin-right: 30px;
+        }
+
+        #pad i:nth-child(3) {
+            display: none;
         }
 
         #page2{
@@ -149,24 +229,88 @@
             </div>
             <div id="order_heart">
                 <div id="order">
-                    <span>shuffle <i class="fa-solid fa-shuffle"></i></span>
-                    <span>repeat <i class="fa-solid fa-repeat"></i></span>
-                    <span>repeat <i class="fa-solid fa-repeat"></i>1</span>
+                    <a href="#"><span>shuffle <i class="fa-solid fa-shuffle"></i></span></a>
+                    <a href="#"><span>repeat <i class="fa-solid fa-repeat"></i></span></a>
+                    <a href="#"><span>repeat <i class="fa-solid fa-repeat"></i>1</span></a>
                 </div>
                 <div id="heart">
-                  <i class="fa-solid fa-heart"></i>
-                  <span>339,224</span>
+                    <a href="#">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>339,224</span>
+                    </a>
                 </div>
               </div>
-              <div id="play_list"></div>
-              <div id="controller"></div>
+              <div id="play_list">
+                  <div class="playList__song">
+                      <div class="song__album">
+                          <img src="../IMG/" alt="앨범">
+                      </div>
+                      <div class="album__info">
+                          <span>Artist Name</span>
+                          <span>Song Name</span>
+                      </div>
+                      <div class="ellipsis">
+                          <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                      </div>
+                  </div>
+                  <div class="playList__song">
+                      <div class="song__album">
+                          <img src="../IMG/" alt="앨범">
+                      </div>
+                      <div class="album__info">
+                          <span>Artist Name</span>
+                          <span>Song Name</span>
+                      </div>
+                      <div>
+                          <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                      </div>
+                  </div>
+                  <div class="playList__song">
+                      <div class="song__album">
+                          <img src="../IMG/" alt="앨범">
+                      </div>
+                      <div class="album__info">
+                          <span>Artist Name</span>
+                          <span>Song Name</span>
+                      </div>
+                      <div>
+                          <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                      </div>
+                  </div>
+                  <div class="playList__song">
+                      <div class="song__album">
+                          <img src="../IMG/" alt="앨범">
+                      </div>
+                      <div class="album__info">
+                          <span>Artist Name</span>
+                          <span>Song Name</span>
+                      </div>
+                      <div>
+                          <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                      </div>
+                  </div>
+              </div>
+              <div id="controller">
+                  <div id="nowPlaying">
+                      <span>Song Name</span>
+                      <span>Artist Name</span>
+                  </div>
+                  <div id="pad">
+                      <i class="fa-solid fa-backward-fast"></i>
+                      <i class="fa-solid fa-pause"></i>
+                      <i class="fa-solid fa-play"></i>
+                      <i class="fa-solid fa-forward-fast"></i>
+                      <!--어썸 폰트 backward [pause play](toggle)
+                      forward -->
+                  </div>
+              </div>
         </main>
     </div>
     <div id="page2">
 
     </div>
     <div>
-        <button onclick="changeBox()">page1</button>
+        <button id="btn" onclick="changeBox()">page1</button>
     </div>
 </body>
 </html>
