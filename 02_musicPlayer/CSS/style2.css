@@ -1,0 +1,42 @@
+#page2 {
+    width: 550px;
+    height: 750px;
+    background-color: blue;
+    position: relative;
+    border-radius: 50px;
+}
+
+
+#page2 > * {
+    width: 470px;
+    margin-left: calc((100% - 470px)/2);
+}
+
+
+#header2 {
+    width: 470px;
+    height: 40px;
+    background-color: antiquewhite;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 16px;
+    padding-top: calc((40px - 32px)/2);
+}
+
+#header2 i {
+    cursor: pointer;
+}
+
+#main2 {
+    width: 470px;
+    height: 590px;
+    background-color: chocolate;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

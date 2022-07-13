@@ -1,0 +1,131 @@
+#singer_info #singer_photo img {
+    width: 90px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#order_heart>* {
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+}
+
+#main #order_heart #order {
+    width: 100px;
+    height: 40px;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#order span:nth-child(n + 2) {
+    display: none
+}
+
+#order:hover {
+    /*JS로 눌렀을 때 처리와 동시에 hover효과 처리*/
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+#main #order_heart #heart {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#heart:hover {
+  /*JS로 눌렀을 때 처리와 동시에 hover효과 처리*/
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+
+#heart i {
+    margin-right: 10px;
+}
+
+#play_list .playList__song {
+    cursor: pointer;
+    background-color: rgb(242, 223, 223);
+    width: 80%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+#play_list .playList__song:first-child{
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+#play_list .playList__song:nth-child(n + 2):nth-child(-n + 3){
+    margin-bottom: 6px;
+}
+
+#play_list .playList__song:last-child{
+    margin-bottom: 10px;
+}
+
+.song__album {
+    margin-left: 20px;
+    border-radius: 15px;
+}
+
+.album__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+    padding-left: 20px;
+    width: 288px;
+}
+
+.ellipsis {
+    cursor: pointer;
+}
+
+#nowPlaying {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+#nowPlaying span:last-child {
+  font-weight: bold;
+  font-size:20px;
+}
+
+#pad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+#pad i {
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#pad i:nth-child(2) {
+    display: none;
+}
+
+#page2 {
+    display: none;
+    width: 550px;
+    height: 750px;
+    background-color: blue;
+}
