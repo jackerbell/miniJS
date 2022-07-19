@@ -155,6 +155,7 @@ function controller1() {
     if(songIndex < 0) {
       songIndex = songs.length - 1;
     }
+    loadSong(songs[songIndex])
     musicPlay()
   })
   nextBtn1.addEventListener('click', function () {
@@ -162,6 +163,7 @@ function controller1() {
     if(songIndex > songs.length-1) {
       songIndex = 0;
     }
+    loadSong(songs[songIndex])
     musicPlay()
   })
   play1[1].addEventListener('click', function () {
@@ -187,6 +189,8 @@ function controller2() {
     if(songIndex < 0) {
       songIndex = songs.length - 1;
     }
+    loadSong(songIndex);
+    loadSong(songs[songIndex])
     musicPlay()
   })
 
@@ -195,6 +199,8 @@ function controller2() {
     if(songIndex > songs.length-1) {
       songIndex = 0;
     }
+    loadSong(songIndex);
+    loadSong(songs[songIndex])
     musicPlay()
   })
 
