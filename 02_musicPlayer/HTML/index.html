@@ -13,6 +13,7 @@
       src="https://kit.fontawesome.com/24ba46a7a7.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../JS/moment.js"></script>
     <script defer src="../JS/app.js"></script>
   </head>
 
@@ -30,17 +31,18 @@
       <main id="main">
         <div id="singer_info">
           <div id="singer_photo">
-            <img
-              src='../IMG/imagineD.jpg'>
+            <img class="cover"
+              src='../IMG/Beliver.jpg'>
           </div>
-          <span><b>Imagine Dragon</b></span>
-          <span><b>Beliver</b></span>
+          <span class="artistName"><b>Imagine Dragon</b></span>
+          <span class="songName"><b>Beliver</b></span>
         </div>
         <div id="order_heart">
           <div id="order">
-            <span class="option">shuffle <i class="fa-solid fa-shuffle"></i></span>
+            <span class="option">onetime <i class="fa-solid fa-arrow-right"></i></span>
             <span class="option">repeat <i class="fa-solid fa-repeat"></i></span>
             <span class="option">repeat1 <i class="fa-solid fa-repeat"></i></span>
+            <span class="option">shuffle <i class="fa-solid fa-shuffle"></i></span>
           </div>
           <div id="heart">
             <i class="fa-solid fa-heart"></i>
@@ -50,7 +52,7 @@
         <div id="play_list">
           <div class="playList__song">
             <div class="song__album">
-              <img src="../IMG/imagineD.jpg" alt="앨범" />
+              <img src="../IMG/Beliver.jpg" alt="앨범" />
             </div>
             <div class="album__info">
               <span><b>Imagine Dragon</b></span>
@@ -62,7 +64,7 @@
           </div>
           <div class="playList__song">
             <div class="song__album">
-              <img src="../IMG/Usseewa.jfif" alt="앨범" />
+              <img src="../IMG/Usseewa.jpg" alt="앨범" />
             </div>
             <div class="album__info">
               <span><b>Ado</b></span>
@@ -74,7 +76,7 @@
           </div>
           <div class="playList__song">
             <div class="song__album">
-              <img src="../IMG/lovedive.jfif" alt="앨범" />
+              <img src="../IMG/LOVEDIVE.jpg" alt="앨범" />
             </div>
             <div class="album__info">
               <span><b>IVE</b></span>
@@ -86,7 +88,7 @@
           </div>
           <div class="playList__song">
             <div class="song__album">
-              <img src="../IMG/left and right.jfif" alt="앨범" />
+              <img src="../IMG/Left and Right.jpg" alt="앨범" />
             </div>
             <div class="album__info">
               <span><b>Charlie Puth</b></span>
@@ -99,18 +101,19 @@
         </div>
         <div id="controller">
           <div id="nowPlaying">
-            <span><b>Beliver</b></span>
-            <span>Imagine Dragon</span>
+            <span class="songName"><b>Beliver</b></span>
+            <span class="artistName">Imagine Dragon</span>
           </div>
           <div id="pad">
-            <i class="fa-solid fa-backward-fast fa-xl"></i>
+            <i class="fa-solid fa-backward-fast prev1 fa-xl"></i>
             <i class="fa-solid fa-play play1 fa-2x"></i>
             <i class="fa-solid fa-pause play1 fa-2x"></i>
-            <i class="fa-solid fa-forward-fast fa-xl"></i>
+            <i class="fa-solid fa-forward-fast next1 fa-xl"></i>
             <!--어썸 폰트 backward [pause play](toggle)
                       forward -->
           </div>
         </div>
+        <audio src="../AUDIO/Beliver.mp3" preload="metadata" style="display:none"></audio>
       </main>
     </div>
     <div id="page2">
@@ -122,31 +125,29 @@
       </header>
       <main id="main2">
         <div id="singer__photo2">
-          <img
-            src="../IMG/imagineD.jpg"
+          <img class="cover"
+            src="../IMG/Beliver.jpg"
           />
         </div>
         <div id="song__info">
-          <span> Beliver </span>
-          <span> Pop Rock, Arena Rock </span>
+          <span class="songName"> Beliver </span>
+          <span id="genre"> Pop Rock, Arena Rock </span>
         </div>
         <div id="timeBar">
           <div id="palyTime">
-            <span>1:23</span>
-            <span>3:43</span>
+            <span id="runTime"></span>
+            <span id="endTime"></span>
           </div>
           <div id="bar">
             <div id="progressBar"></div>
-            <i class="fa-solid fa-circle"></i>
-            <!--위에 진행시간(span) 아래에 타임바.. -->
           </div>
         </div>
         <div id="controller2">
           <i class="fa-solid fa-arrows-rotate"></i>
-          <i class="fa-solid fa-backward-fast fa-2x"></i>
+          <i class="fa-solid fa-backward-fast prev2 fa-2x"></i>
           <i class="fa-solid fa-circle-play play2 fa-3x " ></i>
           <i class="fa-solid fa-pause play2 fa-3x" style="display:none"></i>
-          <i class="fa-solid fa-forward-fast fa-2x"></i>
+          <i class="fa-solid fa-forward-fast next2 fa-2x"></i>
           <i class="fa-solid fa-shuffle"></i>
           <!--어썸폰트  5개 배치-->
         </div>
