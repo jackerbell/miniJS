@@ -68,7 +68,9 @@ var min = 0;
 
 const progressB = document.querySelector('#progressBar')
 var barWidth = 0;
-//progressBar()
+var interval = null;
+var interval2 = null; /* setinterval clearInterval 쓸시 전역으로처리 및 null 초기화 필수  */
+//progressBar(), progressTime()
 
 
 
@@ -230,14 +232,12 @@ function loadSong(song) {
 function musicPlay() {
   if(play2[1].style['display'] == 'inline-block' && play1[1].style['display'] == 'inline-block'){
     audio.play()
-    var interval = setInterval(progressTime,1000,songs[songIndex])
-    var interval2 = setInterval(progressBar,1000,songs[songIndex])
-    /* 첫번째는 반복이 되는데 두번째는 반복이 안되고 한 번만 실행됨.. */
+    interval = setInterval(progressTime,1000,songs[songIndex])
+    interval2 = setInterval(progressBar,1000,songs[songIndex])
   }    
   else{
     audio.pause()
     clearInterval(interval)
-    /*사용법이 잘못되었는지 수업에서 봤었던 예시를 봐도 이해가 되지 않음.. */
     clearInterval(interval2)
   } 
 }
@@ -258,10 +258,15 @@ function progressTime(song) {
   }
 }
 
+var total_width = 0;
 function progressBar(song) {
   
   var plusWidth = (Math.round(376/song.runtime*100)/100).toFixed(2)
-  console.log(plusWidth)
-  progressB.style.width += plusWidth +'px';
-  /*길이가 한 번늘어나고 이후에는 고정 */
+  console.log('plus:',plusWidth)
+  console.log('width:',progressB.style.width)
+  total_width = total_width + parseFloat(plusWidth)
+  progressB.style.width = total_width +'px';
+  /*길이가 한 번늘어나고 이후에는 고정 
+    데이터 타입?? parseFloat?? 
+  */
 }
