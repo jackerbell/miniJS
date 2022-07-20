@@ -68,6 +68,22 @@
   border: 1px solid black;
 }
 
+.ellipsis  {
+  color: black !important; 
+}
+
+.borderEffectionPlay {
+  transition: all 0.5s linear;
+  color:rgb(155, 212, 22);
+  transform:scale(1.0);
+}
+
+.borderEffectionPause {
+  transition: all 0.5s linear;
+  color:rgb(28, 22, 212);
+  transform:scale(1.0);
+}
+
 
 #play_list .playList__song:first-child {
   margin-top: 10px;

@@ -35,6 +35,9 @@ const prevBtn2 = document.querySelector('.prev2');
 const nextBtn2 = document.querySelector('.next2');
 // controller1(), controller2() 
 
+const playList_Song = document.querySelectorAll('.playList__song')
+// 재생 중인 곡 표시
+
 let songIndex = 0;
 const songs = [
   {
@@ -106,12 +109,12 @@ function playOption() {
 
   option[0].addEventListener('click', function () { /*foreach를 쓰지 않을 경우 배열의 순서를 꼭 적어줘야함! */
     option[0].style['display'] = 'none';
-    option[1].style['display'] = 'inline'; //repeat
-    
+    option[1].style['display'] = 'inline'; //repeat   
   })
   option[1].addEventListener('click', function () {
     option[1].style['display'] = 'none';
     option[2].style['display'] = 'inline'; // repeat 1
+    songIndex = songIndex;
   })
   option[2].addEventListener('click', function () {
     option[2].style['display'] = 'none';
@@ -153,19 +156,57 @@ function controller1() {
     musicPlay();
   })
   prevBtn1.addEventListener('click', function () {
-    songIndex--;
-    if(songIndex < 0) {
-      songIndex = songs.length - 1;
+    seco = 0;
+    sect = 0;
+    min = 0;
+    progressB.style.width = 0;
+    total_width = 0;
+    if(option[1].style['display'] == 'none' && option[2].style['display'] == 'inline'){
+      songIndex = songIndex;
+    }else if(option[2].style['display'] == 'none' && option[3].style['display'] == 'inline'){
+      songIndex = Math.ceil((Math.random()*3))
+      console.log(songIndex)
+    }else if(option[0].style['display'] == 'none' && option[1].style['display'] == 'inline'){
+      songIndex--;
+      if(songIndex < 0){
+        songIndex = songs.length - 1;
+      }
+    }else {
+      songIndex--;
+      if(songIndex < 0) {
+        songIndex = songs.length - 1;
+      }
     }
     loadSong(songs[songIndex])
+    clearInterval(interval)
+    clearInterval(interval2)
     musicPlay()
   })
   nextBtn1.addEventListener('click', function () {
-    songIndex++;
-    if(songIndex > songs.length-1) {
-      songIndex = 0;
+    seco = 0;
+    sect = 0;
+    min = 0;
+    progressB.style.width = 0;
+    total_width = 0;
+    if(option[1].style['display'] == 'none' && option[2].style['display'] == 'inline'){
+      songIndex = songIndex;
+    }else if(option[2].style['display'] == 'none' && option[3].style['display'] == 'inline'){
+      songIndex = Math.ceil((Math.random()*3))
+      console.log(songIndex)
+    }else if(option[0].style['display'] == 'none' && option[1].style['display'] == 'inline'){
+      songIndex++;
+      if(songIndex > 3){
+        songIndex = 0;
+      }
+    }else {
+      songIndex++;
+      if(songIndex > songs.length-1) {
+        songIndex = 0;
+      }
     }
     loadSong(songs[songIndex])
+    clearInterval(interval)
+    clearInterval(interval2)
     musicPlay()
   })
   play1[1].addEventListener('click', function () {
@@ -187,23 +228,59 @@ function controller2() {
   })
 
   prevBtn2.addEventListener('click', function () {
-    songIndex--;
-    if(songIndex < 0) {
-      songIndex = songs.length - 1;
+    seco = 0;
+    sect = 0;
+    min = 0;
+    progressB.style.width = 0;
+    total_width = 0;
+    if(option[1].style['display'] == 'none' && option[2].style['display'] == 'inline'){
+      songIndex = songIndex;
+    }else if(option[2].style['display'] == 'none' && option[3].style['display'] == 'inline'){
+      songIndex = Math.ceil((Math.random()*3))
+      console.log(songIndex)
+    }else if(option[0].style['display'] == 'none' && option[1].style['display'] == 'inline'){
+      songIndex--;
+      if(songIndex < 0){
+        songIndex = songs.length - 1;
+      }
+    }else {
+      songIndex--;
+      if(songIndex < 0) {
+        songIndex = songs.length - 1;
+      }
     }
-    loadSong(songIndex);
     loadSong(songs[songIndex])
-    musicPlay()
+    clearInterval(interval)
+    clearInterval(interval2)
+    musicPlay();
   })
 
   nextBtn2.addEventListener('click', function () {
-    songIndex++;
-    if(songIndex > songs.length-1) {
-      songIndex = 0;
+    seco = 0;
+    sect = 0;
+    min = 0;
+    progressB.style.width = 0;
+    total_width = 0;
+    if(option[1].style['display'] == 'none' && option[2].style['display'] == 'inline'){
+      songIndex = songIndex;
+    }else if(option[2].style['display'] == 'none' && option[3].style['display'] == 'inline'){
+      songIndex = Math.ceil((Math.random()*3))
+      console.log(songIndex)
+    }else if(option[0].style['display'] == 'none' && option[1].style['display'] == 'inline'){
+      songIndex++;
+      if(songIndex > songs.length - 1){
+        songIndex = 0;
+      }
+    }else{
+      songIndex++;
+      if(songIndex > songs.length - 1) {
+        songIndex = 0;
+      }
     }
-    loadSong(songIndex);
     loadSong(songs[songIndex])
-    musicPlay()
+    clearInterval(interval)
+    clearInterval(interval2)
+    musicPlay();
   })
 
   play2[1].addEventListener('click', function () {
@@ -231,14 +308,32 @@ function loadSong(song) {
 
 function musicPlay() {
   if(play2[1].style['display'] == 'inline-block' && play1[1].style['display'] == 'inline-block'){
-    audio.play()
+    playList_Song.forEach(function(ele){
+      if(ele.id == songs[songIndex].name){
+        ele.classList.add('borderEffectionPlay')
+        ele.classList.remove('borderEffectionPause')
+      }else{
+        ele.classList.remove('borderEffectionPlay')
+        ele.classList.remove('borderEffectionPause')
+      } 
+    })
     interval = setInterval(progressTime,1000,songs[songIndex])
     interval2 = setInterval(progressBar,1000,songs[songIndex])
+    audio.play()
   }    
   else{
-    audio.pause()
+    playList_Song.forEach(function(ele){
+      if(ele.id == songs[songIndex].name){
+        ele.classList.add('borderEffectionPause')
+        ele.classList.remove('borderEffectionPlay')
+      }else {
+        ele.classList.remove('borderEffectionPlay')
+        ele.classList.remove('borderEffectionPause')
+      } 
+    })
     clearInterval(interval)
     clearInterval(interval2)
+    audio.pause()
   } 
 }
 
@@ -254,19 +349,94 @@ function progressTime(song) {
   }
   var allRunTime = min*60 + sect*10 + seco;
   if(allRunTime > song.runtime) {
-    runTime.innerHTML = '0:00'
+    runTime.innerHTML = '0:00';// 재생시간 다 된 후 그 다음 재생옵션 정하기.
+    progressB.style.width = 0;
+    total_width=0;
+    if(runTime.innerHTML == '0:00'){
+      if(option[2].style['display'] == 'none' && option[3].style['display'] == 'inline'){
+        songIndex = songIndex;
+        seco = 0;
+        sect = 0;
+        min = 0;
+        runTime.innerHTML =`${min}:${sect}${seco++}`
+        if(seco>9){
+          seco = 0;
+          sect ++;
+          if(sect>5){
+            sect = 0;
+            min ++;
+          }
+        }
+      }else if(option[2].style['display'] == 'none' && option[3].style['display'] == 'inline'){
+        songIndex = Math.ceil((Math.random()*3))
+        console.log(songIndex)
+        seco = 0;
+        sect = 0;
+        min = 0;
+        runTime.innerHTML =`${min}:${sect}${seco++}`
+        if(seco>9){
+          seco = 0;
+          sect ++;
+          if(sect>5){
+            sect = 0;
+            min ++;
+          }
+        }
+      }else if(option[0].style['display'] == 'none' && option[1].style['display'] == 'inline'){
+        songIndex++
+        if(songIndex > 3){
+          songIndex = 0;
+        }
+        seco = 0;
+        sect = 0;
+        min = 0;
+        runTime.innerHTML =`${min}:${sect}${seco++}`
+        if(seco>9){
+          seco = 0;
+          sect ++;
+          if(sect>5){
+            sect = 0;
+            min ++;
+          }
+        }
+      }else {
+        play1[1].style['display'] = 'none';
+        play1[0].style['display'] = 'inline-block';
+        play2[1].style['display'] = 'none';
+        play2[0].style['display'] = 'inline-block';
+        songIndex++
+        if(songIndex > 3){
+          songIndex = 0;
+        }
+        seco = 0;
+        sect = 0;
+        min = 0;
+        runTime.innerHTML =`${min}:${sect}${seco++}`
+        if(seco>9){
+          seco = 0;
+          sect ++;
+          if(sect>5){
+            sect = 0;
+            min ++;
+          }
+        }
+      }
+    }
   }
 }
 
 var total_width = 0;
 function progressBar(song) {
-  
   var plusWidth = (Math.round(376/song.runtime*100)/100).toFixed(2)
-  console.log('plus:',plusWidth)
-  console.log('width:',progressB.style.width)
   total_width = total_width + parseFloat(plusWidth)
   progressB.style.width = total_width +'px';
   /*길이가 한 번늘어나고 이후에는 고정 
     데이터 타입?? parseFloat?? 
   */
 }
+
+audio.addEventListener('ended',function(){
+  progressTime(songs[songIndex])
+  progressBar(songs[songIndex])
+  loadSong(songs[songIndex]) /* 위에서 index 규칙대로 정한 후 적용.. 순서중요!!!! */
+})
