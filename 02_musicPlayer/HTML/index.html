@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/style2.css" />
+    <link rel="stylesheet" href="../CSS/main2.css" />
+    <script
+      src="https://kit.fontawesome.com/24ba46a7a7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="../JS/app.js"></script>
+  </head>
+
+  <body>
+    <div id="page1">
+      <header id="header">
+        <i class="fa-solid fa-music fa-2x" id="changebtn1"></i>
+        <input type="text" id="input" style="display: none">
+        <i class="fa-solid fa-magnifying-glass fa-2x search"></i>
+        <!--<i class="fa-solid fa-angle-left fa-3x"></i> page2에서 쓸예정-->
+        <!--font awesome 뒤로가기 탐색문양 순서대로 넣고 
+            하나는 왼쪽 하나는 오른쪽 정렬.. -->
+          
+      </header>
+      <main id="main">
+        <div id="singer_info">
+          <div id="singer_photo">
+            <img class="cover"
+              src='../IMG/Beliver.jpg'>
+          </div>
+          <span class="artistName"><b>Imagine Dragon</b></span>
+          <span class="songName"><b>Beliver</b></span>
+        </div>
+        <div id="order_heart">
+          <div id="order">
+            <span class="option">normal <i class="fa-solid fa-arrow-right"></i></span>
+            <span class="option">repeat <i class="fa-solid fa-repeat"></i></span>
+            <span class="option">repeat1 <i class="fa-solid fa-repeat"></i></span>
+            <span class="option">shuffle <i class="fa-solid fa-shuffle"></i></span>
+          </div>
+          <div id="heart">
+            <i class="fa-solid fa-heart"></i>
+            <span id="heartNum">339224</span>
+          </div>
+        </div>
+        <div id="play_list">
+          <div class="playList__song" id="Beliver">
+            <div class="song__album">
+              <img src="../IMG/Beliver.jpg" alt="앨범" />
+            </div>
+            <div class="album__info">
+              <span><b>Imagine Dragon</b></span>
+              <span><b>Beliver</b></span>
+            </div>
+            <div class="ellipsis">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <div class="playList__song" id="Usseewa">
+            <div class="song__album">
+              <img src="../IMG/Usseewa.jpg" alt="앨범" />
+            </div>
+            <div class="album__info">
+              <span><b>Ado</b></span>
+              <span><b>Usseewa</b></span>
+            </div>
+            <div class="ellipsis">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <div class="playList__song" id="LOVEDIVE">
+            <div class="song__album">
+              <img src="../IMG/LOVEDIVE.jpg" alt="앨범" />
+            </div>
+            <div class="album__info">
+              <span><b>IVE</b></span>
+              <span><b>LOVEDIVE</b></span>
+            </div>
+            <div class="ellipsis">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <div class="playList__song" id="Left and Right">
+            <div class="song__album">
+              <img src="../IMG/Left and Right.jpg" alt="앨범" />
+            </div>
+            <div class="album__info">
+              <span><b>Charlie Puth</b></span>
+              <span><b>Left and Right</b></span>
+            </div>
+            <div class="ellipsis">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+        </div>
+        <div id="controller">
+          <div id="nowPlaying">
+            <span class="songName"><b>Beliver</b></span>
+            <span class="artistName">Imagine Dragon</span>
+          </div>
+          <div id="pad">
+            <i class="fa-solid fa-backward-fast prev1 fa-xl"></i>
+            <i class="fa-solid fa-play play1 fa-2x"></i>
+            <i class="fa-solid fa-pause play1 fa-2x"></i>
+            <i class="fa-solid fa-forward-fast next1 fa-xl"></i>
+            <!--어썸 폰트 backward [pause play](toggle)
+                      forward -->
+          </div>
+        </div>
+        <audio src="../AUDIO/Beliver.mp3" preload="metadata" style="display:none" autoplay="true"></audio>
+      </main>
+    </div>
+    <div id="page2">
+      <header id="header2">
+        <i class="fa-solid fa-house fa-2x" id="changebtn2"></i>
+        <!--<i class="fa-solid fa-angle-left fa-3x"></i> page2에서 쓸예정-->
+        <!--font awesome 뒤로가기 탐색문양 순서대로 넣고 
+            하나는 왼쪽 하나는 오른쪽 정렬.. -->
+      </header>
+      <main id="main2">
+        <div id="singer__photo2">
+          <img class="cover"
+            src="../IMG/Beliver.jpg"
+          />
+        </div>
+        <div id="song__info">
+          <span class="songName"> Beliver </span>
+          <span id="genre"> Pop Rock, Arena Rock </span> 
+        </div>
+        <div id="timeBar">
+          <div id="palyTime">
+            <span id="runTime"></span>
+            <span id="endTime"></span>
+          </div>
+          <div id="bar">
+            <div id="progressBar"></div>
+          </div>
+        </div>
+        <div id="controller2">
+          <i class="fa-solid fa-backward-fast prev2 fa-2x"></i>
+          <i class="fa-solid fa-circle-play play2 fa-3x " ></i>
+          <i class="fa-solid fa-pause play2 fa-3x" style="display:none"></i>
+          <i class="fa-solid fa-forward-fast next2 fa-2x"></i>
+          <!--어썸폰트  5개 배치-->
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

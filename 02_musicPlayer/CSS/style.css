@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#page1 {
+  width: 550px;
+  height: 750px;
+  background-color: orange;
+  position: relative;
+  border-radius: 50px;
+}
+
+#page1 > * {
+  margin-left: calc((100% - 470px) / 2);
+}
+
+#header {
+  width: 470px;
+  height: 40px;
+  background-color: antiquewhite;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.searchMode {
+  box-shadow: rgba(0,0,0,0.5) 0 0 0 9999px;
+  position: relative;
+  z-index: 3; /* haader와 동일한 레벨의 박스까지 그림자를 적용시키기 위해서*/ 
+}
+
+#header i {
+  cursor: pointer;
+}
+
+#input {
+  width: 436px; /**/
+  height: 100%;
+}
+
+#main {
+  width: 470px;
+  height: 590px;
+  background-color: aquamarine;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#main #singer_info {
+  background-color: crimson;
+  height: 200px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#main #order_heart {
+  background-color: khaki;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main #play_list {
+  background-color: fuchsia;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#main #controller {
+  background-color: forestgreen;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
