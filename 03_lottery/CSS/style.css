@@ -32,8 +32,8 @@ body{
   border-radius:20%;
 }
 
+
 .ball{
-  /*상시 애니메이션 상태로 wrapBall을 벗어나지 않는 범주에서 각 ball들을 rotate를 사용해 회전시키기*/
   border-radius: 100%;
   background-color: rgb(53, 195, 53);
   width: 100px;
@@ -55,23 +55,6 @@ body{
   margin-top: 100px;
 }
 
-.slotAni{
-  animation-duration: 0.4s;
-  animation-name: slotAni;
-}
-
-@keyframes slotAni {
-  0% { 
-    transform: rotate(0deg);
-  }
-  50%{
-    transform: rotate(-90deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 
 #myNum{
   width: 100px;
@@ -80,11 +63,11 @@ body{
   text-align: center;
 }
 
-.myNum{
-  /*
+/*
   처음에는 단순히 버튼을 돌릴 때마다 아래에서부터 구체 내부에 innerHTML로 텍스트를 넣는 방식 RANDOM(1~45) 중복금지.. 
   이후 가능하면 공이 굴러가는 모션으로 아래쪽에 위치시키는 애니메이션을 양쪽 번호칸에 투입.. 
-  */
+*/
+.myNum{
   width: 100px;
   height: 110px;
   border-radius: 100%;
@@ -92,18 +75,28 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 55px;
+  line-height:2;
+  font-weight: bold;
 }
 
+/* my bonus num */
+.myNum:last-child{
+  background-color:rgb(168, 88, 168);
+}
+
+/* 버튼을 최초로 돌리면 innerHTML로 각각의 구체에 당첨번호 넣기 RANDOM(1~45) 중복금지.. */
 .myNum:first-child{
-  /*버튼을 최초로 돌리면 innerHTML로 각각의 구체에 당첨번호 넣기 RANDOM(1~45) 중복금지.. */
   margin-top:30px;
 }
 
+/* winning ball이 표시될 영역 */
 #winningNum{
   width: 100px;
   height: 800px;
   background-color:white;
 }
+
 
 .winningNum{
   width: 100px;
@@ -113,9 +106,17 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 55px;
+  line-height:2;
+  font-weight: bold;
 }
 
-.winningNum:first-child{
-  /*버튼을 최초로 돌리면 innerHTML로 각각의 구체에 당첨번호 넣기 RANDOM(1~45) 중복금지.. */
+/* bonus winning num */
+.winningNum:last-child{
+  background-color:rgb(168, 88, 168);
+}
+
+/*버튼을 최초로 돌리면 innerHTML로 각각의 구체에 당첨번호 넣기 RANDOM(1~45) 중복금지.. */
+.winningNum:first-child{  
   margin-top:30px;
 }
