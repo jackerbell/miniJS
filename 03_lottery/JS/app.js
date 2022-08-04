@@ -71,6 +71,7 @@ function lottoSimul() { /*추첨 동작 전반.. 슬롯 돌리기(클릭이벤�
     myNum[i].innerHTML = `${numList[i]}`
   }
   console.log(myNum)
+  console.log(numList)
   numList2 = lottoNum2() /*당첨 로또번호  배열 번호 할당 */
   for(j=0;j<numList2.length;j++){
     winningNum[j].innerHTML = `${numList2[j]}`
@@ -108,16 +109,17 @@ function lottoSimul() { /*추첨 동작 전반.. 슬롯 돌리기(클릭이벤�
   }else if(countO===4){
     alert(`${countO}개 4등에 당첨되셨습니다.\n상금은 5만원 입니다.`)
   }else if(countO===5){
-    if(bonus) {
+    if(!bonus) {
       alert(`${countO}개 3등에 당첨되셨습니다.\n상금은 150만원 입니다.`)
     }
     else{
     alert(`${countO}개 보너스${bonus} 맞춰줘 2등에 당첨되셨습니다.\n상금은 4000만원 입니다.`)
     }     
-  }else if(mywinning.length===6){
+  }else if(countO===6){
     alert(`${countO}개 1등에 당첨셨습니다.\n상금은 20억입니다.`)
   }else{
     alert(`${countO}개 다음 기회에 뵈여 ㅠㅠ`)
   }
   countO = 0; /* 당첨 번호 수 초기화 */
+  bonus = 0;/* 보너스 당첨 번호 초기화 -> 0이나 1로만 설정하므로 다시 false(0)으로  */
 }
