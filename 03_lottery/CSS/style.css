@@ -38,12 +38,12 @@ body{
   justify-content: center;
 }
 
+
 .ball{
   border-radius: 100%;
   background-color: rgb(53, 195, 53);
   width: 100px;
   height: 100px;
-  margin: 0 auto;
 }
 
 .rotate{/* 케이스 내부에서 공이 움직이고 색이 변하는 애니메이션*/
