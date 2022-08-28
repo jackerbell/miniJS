@@ -23,6 +23,7 @@
   향후 작업 중 혹은 작업이 끝난 후 어울리는 기능이 있을 경우 추가예정..  <br>
 
   <br>
+  <br>
 
 * 2022년 8월 24일 
 
@@ -41,6 +42,8 @@
   이벤트 객체를 파라미터로 주어  오디오와 건반(div.key)요소에 접근해 오디오를 재생시키는 playKey(e) 함수 선언 
 
   window.addEventListener로 `keydown`이벤트를 주어 playKey(e)를 호출시켜 건반을 누를 때마다 해당 건반의 음계에 해당하는 오디오 출력하는 기능 추가<br>
+  <br>
+  <br>
 
 * 2022년 8월 28일
 
@@ -55,6 +58,8 @@
   키를 누를 때, 전환효과(transition[음영,글자색,크기], css`.playing`) 추가 및 전환효과 제거(`removePlaying`)를 `addEventListener`의 `transtioned`이벤트를 이용해 구현
 
   UI(요소, 폰트) 크기 확대
+  
+  건반의 키 표시를 제거하고 `hover`효과를 통해 건반의 키보드 키를 나타나도록 함
 
   
 
