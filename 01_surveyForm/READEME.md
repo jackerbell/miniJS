@@ -8,9 +8,9 @@
 
 * 기능
 
-  ![음악재생기 설명](../../images/READEME/음악재생기 설명.png)
+  ![우울증](../../images/READEME/우울증-16617615339991.jpg)
   
-  ![image-20220829152613341](../../images/READEME/image-20220829152613341.png)
+  ![우울증2](../../images/READEME/우울증2-16617615504365.jpg)
   
   <br><br>
   
