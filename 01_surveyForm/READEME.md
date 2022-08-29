@@ -7,7 +7,10 @@
 
 
 * 기능
-
+    <img src="https://user-images.githubusercontent.com/65724413/187190072-b3c6068e-8420-46bd-8660-39d81c5ca316.png"/>
+    <br><br>
+    <img src="https://user-images.githubusercontent.com/65724413/187190081-5a114eab-e4f0-419e-b7ce-6f9fab528706.png"/>
+    <br><br>
   * 처음 설문조사 화면에 들어서면 안내문과 '설문조사 시작' 버튼이 존재하고 이 버튼을 누르면 설문이 시작됨.
   * 설문조사가 시작되면 안내문과 button은 display:'none' 상태로 사라짐.
   * 설문조사 창이 열리면서 미리 정해진 질문의 개수만큼 input, label pair 가 반복문으로 생성되어서 나옴, 이때 input, label은 4지선답이기에 문제당 4개씩 생성됨.
