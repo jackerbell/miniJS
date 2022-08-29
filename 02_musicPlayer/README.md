@@ -7,7 +7,14 @@
 <br>
 
 * 기능
-
+    <video src="https://user-images.githubusercontent.com/65724413/187192360-17d63461-532e-4e52-bd6e-b15ccb7bb130.mp4">
+    <br><br>
+    <img src="https://user-images.githubusercontent.com/65724413/187191055-ee768078-8a65-4946-8b0c-e533b3e32790.png"/>
+    <br><br>
+    <img src="https://user-images.githubusercontent.com/65724413/187191056-eee1d253-a389-4cf6-96e4-45c33b76db43.png"/>
+    <br><br>
+    <img src="https://user-images.githubusercontent.com/65724413/187191059-0800f596-8826-4026-baab-f0e46c6ec5f3.png"/>
+    <br><br>
   * 재생,정지,옵션(일반,1곡만 반복, 전체 반복, 랜덤) 이전, 다음곡 이동 기능 보유
   * 좌측 상단 음표 아이콘은 화면 전환용(재생리스트, 현재 재생중인 곡)
   * 돋보기 아이콘 클릭 시 검색모드로 전환 해제는 돋보기 아이콘을 한 번더 클릭!
