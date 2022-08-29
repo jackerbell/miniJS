@@ -7,6 +7,7 @@
 
 
 * 기능
+<br>
     <img src="https://user-images.githubusercontent.com/65724413/187190072-b3c6068e-8420-46bd-8660-39d81c5ca316.png"/>
     <br><br>
     <img src="https://user-images.githubusercontent.com/65724413/187190081-5a114eab-e4f0-419e-b7ce-6f9fab528706.png"/>
