@@ -2,9 +2,11 @@
 
 <h3>Piano</h3>
 * 기능
+
   <br><br>
   <video src="https://user-images.githubusercontent.com/65724413/187193689-50abb82f-a811-417d-9ec4-3f1b3f9eed93.mp4">
   <br><br>
+  
 * 일정
 
   2022년 8월 23일 
