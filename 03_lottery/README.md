@@ -5,7 +5,7 @@
 <br>
 
 * 기능
-    <img src="https://user-images.githubusercontent.com/65724413/187189466-518ac33f-ae8c-48ae-aad8-a9291a735648.gif"/>
+    <video src="https://user-images.githubusercontent.com/65724413/187194896-f3a01f77-74e0-4946-a489-4ee3f291139b.mp4"/>
   * 케이스 안에 로또 공에  회전 효과및 색상 변화를 준 `animation` 효과 부여해 계속 공의 색이 변하면 회전하도록 함.
   *  좌측은 자신의 로또 번호, 우측은 당첨 번호로 색상을 구분했고 양측 하단의 보라색 공은 보너스 번호.
   * 케이스 하단 빨간색 박스 내부의 은색 슬롯을 클릭하면 회전하면서 `alert` 로 당첨된 번호의 갯수 및  당첨상금을 알려줌.(추첨 동작)<br><br>
