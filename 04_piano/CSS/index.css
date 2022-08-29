@@ -1,0 +1,147 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#wrap{
+  position: relative;
+  width: 950px;
+  height: 750px;
+  background-color:rgb(193, 191, 191);
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center
+}
+
+
+#header {
+  position:absolute;
+  text-align: center;
+  width: 950px;
+  height: 70px;
+  background-color:red;
+  color:white;
+  top:0px;
+}
+
+#header>h1 {
+  margin-top:1px;
+}
+
+#displayKey{
+  position:absolute;
+  text-align:center;
+  width:700px;
+  height:200px;
+  background-color:rgb(15, 13, 13);
+  top: 150px;
+  font-size: 95px;
+  line-height: 95px;
+  padding-top: calc((200px - 105px)/2);
+  color: white;
+  text-shadow: 0 0 5rem rgba(42, 207, 240);
+}
+
+.playing{
+  transform: scale(.95);
+  color: red !important;/* */
+  border-color: rgb(39, 168, 237);
+  box-shadow: 0 0 10px rgb(37, 205, 217);
+  text-shadow: 0 0 5em rgb(9, 67, 79);
+}
+
+#piano{
+  width: 700px;
+  height: 300px;
+  background-color: rgb(146, 143, 143);
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  justify-items: center;
+  bottom: 30px;
+}
+
+.key{
+  position: relative;
+  transition: all 0.1s ease-out;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.key:not(.sharp){
+  width:69px;
+  height:99%;
+  background-color:white;
+  padding-top:calc((290px - 26px));
+}
+
+.key span{
+  display: none;
+  font-size: 26px;
+}
+
+
+#piano:hover span {
+  display:inline-block;
+}
+
+.key.sharp{
+  position: absolute;
+  text-align: center;
+  width:49px;
+  height: 60%;
+  padding-top:calc((170px - 26px));
+  background-color:black;
+  color: white;
+  z-index: 3;/* 전환효과가 일어나도 우선도가 변함없도록..*/
+}
+
+/* W */
+.key.sharp[data-key='87']{
+  left:7%;
+}
+
+/* E */
+.key.sharp[data-key='69']{
+  left: 17%;
+}
+
+/* T */
+.key.sharp[data-key='84']{
+  left: 37%;
+}
+
+/* Y */
+.key.sharp[data-key='89']{
+  left: 47%;
+}
+
+/* U */
+.key.sharp[data-key='85']{
+  left: 57%;
+}
+
+/* O */
+.key.sharp[data-key='79']{
+  left: 77%;
+}
+
+/* P */
+.key.sharp[data-key='80']{
+  left: 87%;
+}
+
+
+

@@ -2,8 +2,8 @@ body {
   display:flex;
   align-items:center;
   justify-content:center;
-  height: 180vh;
-  background-image: url(../../IMG/01_surveyForm/우울증이미지_배경.jfif);
+  min-height: 100vh;
+  background-image: url(../IMG/지우울증이미_배경.jpg);
   background-position: center center;
 }
 #wrap {
