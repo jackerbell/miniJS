@@ -1,7 +1,9 @@
 <h1>Vnailla JS_fourth_project</h1>
 
 <h3>Piano</h3>
-
+* 기능
+  <img src="https://user-images.githubusercontent.com/65724413/187188194-e4fb658f-9ae1-47a8-aa63-f2dd83ff6771.gif"/>
+  <br><br>
 * 일정
 
   2022년 8월 23일 
