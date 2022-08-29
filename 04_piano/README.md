@@ -2,7 +2,8 @@
 
 <h3>Piano</h3>
 * 기능
-  <img src="https://user-images.githubusercontent.com/65724413/187188194-e4fb658f-9ae1-47a8-aa63-f2dd83ff6771.gif"/>
+  <br><br>
+  <video src="https://user-images.githubusercontent.com/65724413/187193689-50abb82f-a811-417d-9ec4-3f1b3f9eed93.mp4">
   <br><br>
 * 일정
 
