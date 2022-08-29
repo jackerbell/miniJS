@@ -10,9 +10,15 @@
 
     2022년 6월 28일<br>
 
+<<<<<<< Updated upstream
     * surveyForm 개발 시작<br>
   
     * JS 기능을 제외한 나머지 레이아웃 완성
+=======
+  ![우울증](../../images/READEME/우울증.jpg)
+  
+  ![우울증2](../../images/READEME/우울증2.jpg)
+>>>>>>> Stashed changes
   
       <br><br>
   
